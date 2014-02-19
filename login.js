@@ -5,7 +5,7 @@
 function Login() {
 	// sessionId -> user map
 	this.sessionMap = {
-		99999 : { name: 'Foo', email: 'foo@bar.com' }
+		99999 : { name: 'name', email: 'email' }
 	};
 }
 /**
@@ -45,6 +45,9 @@ Login.prototype.logout = function(sessionId) {
    /*
 	* TODO: Remove the given sessionId from the sessionMap
 	*/
+	
+		delete this.sessionMap[sessionId];
+		console.log('logout::'+ "sessionId deleted");
 };
 
 // Export the Login class
